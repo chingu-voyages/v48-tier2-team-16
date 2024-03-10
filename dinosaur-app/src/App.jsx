@@ -1,7 +1,9 @@
+import DinosaurList from "./components/DinosaurList"
+
 function App() {
   return (
     <>
-      <h1> Happy coding! </h1>
+      <DinosaurList />
     </>
   )
 }
