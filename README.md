@@ -1,31 +1,32 @@
-# voyage-tasks
+## Table of Contents
+- [About](#about)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Our Team](#our-team)
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+## About
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+This app is part of a shared project created by Team 16 for Voyage 48 of the Chingu Program. Chingu is a collaborative platform that brings together developers from around the world. You can learn more about Chingu on their [website](https://www.chingu.io/)
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
 
-> Own it & Make it your Own!
+## Technologies Used
 
-## Team Documents
+- React.js
+- JavaScript
+- Bootstrap
+- Git & GitHub (for version control)
 
-You may find these helpful as you work together to organize your project.
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+## Installation
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+To run the app locally, follow these steps:
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+1. Clone the repository to your local machine
+2. Open the terminal and navigate to the project directory
+3. Run the command `npm install` to install the necessary dependencies
+4. Run the command `npm run dev` to start the development server
+5. Open your browser and navigate to http://localhost:3000 to view the app
+
 
 ## Our Team
 
