@@ -1,31 +1,33 @@
-# voyage-tasks
+## Table of Contents
+- [About](#about)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Our Team](#our-team)
 
-Your project's `readme` is as important to success as your code. For
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point -
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## About
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+This app is part of a shared project created by Team 16 for Voyage 48 of the Chingu Program. Chingu is a collaborative platform that brings together developers from around the world. You can learn more about Chingu on their [website](https://www.chingu.io/)
 
-> Own it & Make it your Own!
 
-## Team Documents
+## Technologies Used
 
-You may find these helpful as you work together to organize your project.
+- React.js
+- JavaScript
+- Bootstrap
+- Git & GitHub (for version control)
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+## Installation
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+To run the app locally, follow these steps:
+
+1. Clone the repository to your local machine
+2. Open the terminal and navigate to the project directory
+3. Run the command `npm install` to install the necessary dependencies
+4. Run the command `npm run dev` to start the development server
+5. Open your browser and navigate to http://localhost:3000 to view the app
+
 
 ## Our Team
 
@@ -35,8 +37,8 @@ your repo access and to practice PR'ing with your team _before_ you start
 coding!
 
 - Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://linkedin.com/in/valeriylysenko)
-- Andrew Brockmann #2: [GitHub](https://github.com/PongRVA) / [LinkedIn](https://linkedin.com/in/andybrockmann)
-- Teammate name #3: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Andrew Brockmann: [GitHub](https://github.com/PongRVA) / [LinkedIn](https://linkedin.com/in/andybrockmann)
+- Laura Gieg: [GitHub](https://github.com/frosty8104) / [LinkedIn](https://www.linkedin.com/in/laura-gieg-web-designer-developer/)
 - Teammate name #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Teammate name #5: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 
