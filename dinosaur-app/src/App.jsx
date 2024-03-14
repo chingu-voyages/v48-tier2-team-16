@@ -1,11 +1,11 @@
-import DinosaurList from "./components/DinosaurList"
+import DinosaurList from "./components/DinosaurList";
 
 function App() {
   return (
     <>
       <DinosaurList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -4,6 +4,7 @@
 - [Installation](#installation)
 - [Our Team](#our-team)
 
+
 ## About
 
 This app is part of a shared project created by Team 16 for Voyage 48 of the Chingu Program. Chingu is a collaborative platform that brings together developers from around the world. You can learn more about Chingu on their [website](https://www.chingu.io/)
@@ -36,10 +37,11 @@ your repo access and to practice PR'ing with your team *before* you start
 coding!
 
 - Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://linkedin.com/in/valeriylysenko)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Andrew Brockmann: [GitHub](https://github.com/PongRVA) / [LinkedIn](https://linkedin.com/in/andybrockmann)
 - Laura Gieg: [GitHub](https://github.com/frosty8104) / [LinkedIn](https://www.linkedin.com/in/laura-gieg-web-designer-developer/)
 - Teammate name #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Teammate name #5: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 
-   ...
+  ...
+
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
