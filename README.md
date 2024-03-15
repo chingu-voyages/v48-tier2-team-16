@@ -1,5 +1,4 @@
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [About](#about)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
