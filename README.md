@@ -1,4 +1,5 @@
 ## Table of Contents
+- [Table of Contents](#table-of-contents)
 - [About](#about)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
@@ -39,7 +40,7 @@ coding!
 - Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://linkedin.com/in/valeriylysenko)
 - Andrew Brockmann: [GitHub](https://github.com/PongRVA) / [LinkedIn](https://linkedin.com/in/andybrockmann)
 - Laura Gieg: [GitHub](https://github.com/frosty8104) / [LinkedIn](https://www.linkedin.com/in/laura-gieg-web-designer-developer/)
-- Teammate name #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Kaz Smino #4: [GitHub](https://github.com/Kaz-Smino) / [LinkedIn](https://www.linkedin.com/in/kaz-smino/)
 - Teammate name #5: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 
   ...
