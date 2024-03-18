@@ -41,7 +41,5 @@ coding!
 - Laura Gieg: [GitHub](https://github.com/frosty8104) / [LinkedIn](https://www.linkedin.com/in/laura-gieg-web-designer-developer/)
 - Kaz Smino #4: [GitHub](https://github.com/Kaz-Smino) / [LinkedIn](https://www.linkedin.com/in/kaz-smino/)
 - Char Wae (Erica) Chong: [GitHub](https://github.com/chonger878) / [LinkedIn](https://linkedin.com/in/charwaeericachong)
-
-  ...
-
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Kane Remekie: [GitHub](https://github.com/kanerem) / [LinkedIn](https://www.linkedin.com/in/kanerem/)
+- Harmeet Kaur: [LinkedIn](https://www.linkedin.com/in/harmeet-kaur-psm-i-pspo-i-safe-popm-008778236/)
