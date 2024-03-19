@@ -45,6 +45,9 @@ li a {
     font-size: 1.375em;
     text-decoration: none;
 }
+#search-icon {
+    color: #ffffff;
+}
 .nav-logo img {
     padding: 5% 0 0 2%;
     width: 7%;
@@ -52,7 +55,7 @@ li a {
 img {
     width: 100%;
 }
-h1, p {
+.header h1, p {
     color: #ffffff;
     width: 30%;
 }

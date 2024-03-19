@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./img/dino-logo.svg";
+import { FaSearch } from "react-icons/fa";
 
 function Header() {
     return (
@@ -10,7 +11,7 @@ function Header() {
                 <ul>
                     <li><a href="#map">Map |</a></li>
                     <li><a href="#diet">Diet Chart |</a></li>
-                    <li><a href="#search">magnifier icon</a></li>
+                    <li><FaSearch id="search-icon" /></li>
                 </ul>
             </nav>
             </div>
