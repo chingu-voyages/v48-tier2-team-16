@@ -1,9 +1,22 @@
 import React from "react";
+import logo from "./img/dino-logo.svg";
 
 function Header() {
     return (
         <div className="header">
-            <h1>Dinosaur App</h1>
+            <div className="nav-logo">
+            <img src={logo} alt="Dinosaur app logo" />
+            <nav>
+                <ul>
+                    <li><a href="#map">Map |</a></li>
+                    <li><a href="#diet">Diet Chart |</a></li>
+                    <li><a href="#search">magnifier icon</a></li>
+                </ul>
+            </nav>
+            </div>
+            <h1>Welcome To The Dino World!</h1>
+            <p>Explore ancient wonders, uncover prehistoric secrets, and embark on a Jurassic journey. Let's dig into the past together!</p>
+            <button className="explore">Start exploring</button>
         </div>
     )
 }
