@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDinosaurContext } from '../context/DinosaurContext';
 
@@ -6,6 +6,7 @@ const DinosaurDetails = () => {
   const { dinosaurs } = useDinosaurContext();    
   const { id } = useParams();
   const dinosaur = dinosaurs.find(dino => dino.id === parseInt(id));
+  const [news, setNews] = useState([]);
 
   return (
     <div className="container mt-4">
