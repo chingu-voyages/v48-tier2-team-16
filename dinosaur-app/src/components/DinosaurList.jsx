@@ -47,8 +47,8 @@ const DinosaurList = () => {
   }, []);
   return (
     <>
-    <div className="main col-md-12" style={{ background: "#003f62" }}>
-      <form className="container mt-4">
+    <div className="aside col-md-12 pb-4 pt-2" style={{ background: "#003f62" }}>
+      <form className="container mt-4 text-white">
         <h5>Search Dinosaurs by:</h5>
         <label htmlFor="dino-name">Dinosaur Name</label>
         <input
@@ -84,7 +84,9 @@ const DinosaurList = () => {
         </datalist>
         <button onClick={updateDinoList}>Search</button>
       </form>
+      </div>
 
+    <div className="main col-md-12 pt-2" style={{ background: "#8a7356" }}>
       <div className="container mt-4">
         <div className="row">
           {dinosaurs.map((dinosaur) => (
