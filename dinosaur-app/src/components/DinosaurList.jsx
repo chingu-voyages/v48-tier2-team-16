@@ -47,6 +47,7 @@ const DinosaurList = () => {
   }, []);
   return (
     <>
+    <div className="main col-md-12" style={{ background: "#003f62" }}>
       <form className="container mt-4">
         <h5>Search Dinosaurs by:</h5>
         <label htmlFor="dino-name">Dinosaur Name</label>
@@ -149,6 +150,7 @@ const DinosaurList = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </>
   );
