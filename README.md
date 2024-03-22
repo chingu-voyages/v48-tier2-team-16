@@ -13,6 +13,8 @@ This app is part of a shared project created by Team 16 for Voyage 48 of the Chi
 ## Technologies Used
 
 - React.js
+- React Router
+- Context API
 - JavaScript
 - Bootstrap
 - Git & GitHub (for version control)
