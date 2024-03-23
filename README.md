@@ -33,11 +33,6 @@ To run the app locally, follow these steps:
 
 ## Our Team
 
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
-
 - Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://linkedin.com/in/valeriylysenko)
 - Andrew Brockmann: [GitHub](https://github.com/PongRVA) / [LinkedIn](https://linkedin.com/in/andybrockmann)
 - Laura Gieg: [GitHub](https://github.com/frosty8104) / [LinkedIn](https://www.linkedin.com/in/laura-gieg-web-designer-developer/)
