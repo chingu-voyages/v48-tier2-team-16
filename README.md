@@ -19,6 +19,9 @@ This app is part of a shared project created by Team 16 for Voyage 48 of the Chi
 - Bootstrap
 - Git & GitHub (for version control)
 
+## Deployment
+
+The Dinosaur App is deployed and can be accessed at [https://v48-tier2-team-16.netlify.app/](https://v48-tier2-team-16.netlify.app/)
 
 ## Installation
 
