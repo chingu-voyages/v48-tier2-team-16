@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import MapBig from "./MapBig";
 
 const DinosaurList = () => {
   const [dinosaurs, setDinosaurs] = useState([]);
+  const [geocodes, setGeocodes] = useState([]);
   const [formData, setFormData] = useState({
     dinoName: "",
     country: "",
@@ -13,6 +15,15 @@ const DinosaurList = () => {
     lengthMax: 40,
     sortBy: "",
   });
+
+  const passBackCountry = (e) => {
+    setFormData((currForm) => {
+      return {
+        ...currForm,
+        country: e.target.options.children.props.children[3],
+      };
+    });
+  };
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -133,6 +144,50 @@ const DinosaurList = () => {
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const fetchGeocodes = async () => {
+      var requestOptions = {
+        method: "GET",
+      };
+
+      const countriesArr = [];
+      //create array of all countries including duplicates
+      dinosaurs.forEach((dino) => {
+        countriesArr.push(...dino.foundIn.split(", "));
+      });
+      //create array of unique countries
+      const countries = [...new Set(countriesArr)];
+
+      const geoPromises = countries.map((country) => {
+        return fetch(
+          `https://api.geoapify.com/v1/geocode/search?text=${country}&format=json&apiKey=${
+            import.meta.env.VITE_GEOAPIFY_API_KEY
+          }`,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            return {
+              country,
+              lat: result.results[0].lat,
+              lon: result.results[0].lon,
+            };
+          })
+          .catch((error) => console.log("error", error));
+      });
+      const countryAndCodes = await Promise.all(geoPromises);
+      setGeocodes(countryAndCodes);
+    }; //end fetchGeocodes
+    if (dinosaurs.length === 0) return;
+    fetchGeocodes();
+    // console.log("geocodes inside useEffect");
+    // console.log(geocodes);
+  }, [dinosaurs]);
+
+  // console.log("geocodesOutsideEffect");
+  // console.log(geocodes);
+
   return (
     <>
       <form className="container mt-4">
@@ -313,6 +368,16 @@ const DinosaurList = () => {
         />
       </form>
 
+      {/* ********** MAP **************************** */}
+      <div className="container mt-4">
+        <MapBig
+          dinosaurs={dinosaurs}
+          geocodes={geocodes}
+          filteredDinos={filteredDinos}
+          handleChange={handleChange}
+          passBackCountry={passBackCountry}
+        ></MapBig>
+      </div>
       {/******** SEARCH SUMMARY & SORTING **************/}
 
       <div className="container mt-4">
