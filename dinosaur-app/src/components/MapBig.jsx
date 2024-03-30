@@ -3,12 +3,7 @@ import React, { useState, useEffect, Component } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 
-export default function MapBig({
-  dinosaurs,
-  geocodes,
-  filteredDinos,
-  passBackCountry,
-}) {
+export default function MapBig({ dinosaurs, geocodes, passBackCountry }) {
   const dinoIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/5458/5458405.png",
     iconSize: [38, 38],
@@ -23,6 +18,7 @@ export default function MapBig({
       }
     });
   });
+  //Show dinosaur markers in each country so user can click to populate country dropdown
   const dinoMarkers = [];
   dinoByCountry.forEach((country) => {
     let dinosPopup = "";
@@ -37,6 +33,7 @@ export default function MapBig({
         }}
         position={[country.lat, country.lon]}
         icon={dinoIcon}
+        key={country.country}
       >
         <Popup>
           {/* {country.dinos} */}
@@ -46,7 +43,7 @@ export default function MapBig({
       </Marker>
     );
   });
-
+  // Show dinosaur markers as a search result/////////////
   // filteredDinos.forEach((dino) => {
   //   dino.foundIn.split(", ").forEach((country) => {
   //     geocodes.forEach((geocode) => {
@@ -70,26 +67,19 @@ export default function MapBig({
   // });
 
   return (
-    <MapContainer
-      className="leaflet-container"
-      center={[30, 30]}
-      zoom={2}
-      scrollWheelZoom={true}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {dinoMarkers}
-      {/* <Marker position={[30, 30]} icon={dinoIcon}>
-        <Popup>
-          Carcharodontosaurus <br />
-          Brontosaurus <br />
-          Triceratops <br />
-          <hr />
-          Egypt
-        </Popup>
-      </Marker> */}
-    </MapContainer>
+    <div className="container mt-4">
+      <MapContainer
+        className="leaflet-container"
+        center={[30, 30]}
+        zoom={2}
+        scrollWheelZoom={true}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {dinoMarkers}
+      </MapContainer>
+    </div>
   );
 }
