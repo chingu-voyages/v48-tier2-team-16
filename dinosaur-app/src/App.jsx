@@ -1,9 +1,14 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MapBig from "./components/MapBig";
-import DinosaurList from "./components/DinosaurList";
 import SearchForm from "./components/SearchForm";
 import Pagination from "./components/Pagination";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { DinosaurProvider } from "./context/DinosaurContext";
+import DinosaurList from './components/DinosaurList';
+import DinosaurDetails from './components/DinosaurDetails';
+
 
 import "./styles.css";
 
@@ -203,6 +208,7 @@ export default function App() {
     return <h2>Loading...</h2>;
   }
   return (
+
     <>
       <SearchForm handleChange={handleChange} formData={formData} />
       <MapBig
@@ -222,5 +228,15 @@ export default function App() {
         paginate={paginate}
       />
     </>
+
+    <Router>
+      <DinosaurProvider>
+        <Routes>
+          <Route path="/" element={<DinosaurList />} />
+          <Route path="details/:id" element={<DinosaurDetails />} />
+        </Routes>
+      </DinosaurProvider>
+    </Router>
+
   );
 }
