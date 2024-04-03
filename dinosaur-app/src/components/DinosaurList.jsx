@@ -124,7 +124,8 @@ const DinosaurList = () => {
 
   return (
     <>
-      <form className="container mt-4">
+    <div className="aside col-md-12 pb-4 pt-2" style={{ background: "#003f62" }}>
+      <form className="container mt-4 text-white">
         <div className="row">
           <div className="col-7">
             <h4>Search Dinosaurs:</h4>
@@ -301,7 +302,9 @@ const DinosaurList = () => {
           onChange={handleChange}
         />
       </form>
+      </div>
 
+<div className="main col-md-12 pt-2" style={{ background: "#8a7356"}}>
       {/******** SEARCH SUMMARY & SORTING **************/}
 
       <div className="container mt-4">
@@ -396,6 +399,7 @@ const DinosaurList = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </>
   );
