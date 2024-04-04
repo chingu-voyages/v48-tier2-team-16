@@ -5,7 +5,7 @@ import background from "./img/background.png";
 
 function Header() {
     return (
-        <div className="header bg-dark text-white" style={{ backgroundImage: `url(${background.png})`,
+        <div className="header bg-dark text-white" style={{ backgroundImage: `url(${background})`,
         backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
             <div className="container">
                 <div className="row align-items-center">

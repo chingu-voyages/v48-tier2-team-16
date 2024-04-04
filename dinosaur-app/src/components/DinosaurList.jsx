@@ -149,7 +149,7 @@ const DinosaurList = () => {
           </div>
         </div>
 
-        <label htmlFor="dino-name">Dinosaur Name</label>
+        <label htmlFor="dino-name">Name</label>
         <div className="input-group mb-3">
           <input
             className="form-control"
@@ -161,7 +161,7 @@ const DinosaurList = () => {
             value={formData.dinoName}
           />
         </div>
-        <label htmlFor="country">Found In</label>
+        <label htmlFor="country">Country</label>
 
         <div className="input-group mb-3">
           <input
