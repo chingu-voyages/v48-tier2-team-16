@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { useDinosaurContext } from "../context/DinosaurContext";
 import axios from "axios";
 import MapBig from "./MapBig";
+import backupImgUrl from "../img/dino-backup-img.png";
 
 const DinosaurList = ({ currentCards, filteredDinos, clearSearch }) => {
   const { dinosaurs } = useDinosaurContext();
-
-  const backupImgUrl = "./src/img/dino-backup-img.png";
 
   return (
     <div className="main col-md-12 pt-2" style={{ background: "#8a7356"}}>
