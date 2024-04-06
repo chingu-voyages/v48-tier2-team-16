@@ -14,7 +14,7 @@ function Header() {
                     </div>
                 <div className="col-md-9 d-flex justify-content-end">
                     <nav className="navbar navbar-expand">
-                        <ul className="navbar">
+                        <ul className="navbar" style={{ listStyleType: "none" }}>
                             <li className="nav-item">
                                 <a className="nav-link text-white" href="#map">Map <span className="mx-2">|</span></a>
                             </li>
