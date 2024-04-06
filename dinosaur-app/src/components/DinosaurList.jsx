@@ -292,6 +292,7 @@ const DinosaurList = ({ currentCards, filteredDinos, clearSearch }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
