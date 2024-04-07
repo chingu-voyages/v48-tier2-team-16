@@ -43,6 +43,7 @@ const DinosaurDetails = () => {
                 <h5>{data.title}</h5>
                 <p>{new Date(data.published_at).toLocaleString('en-CA', { dateStyle: 'short', hour12: false, timeStyle: 'short' })}</p>
                 <p>Source: {data.source}</p>
+                <img src={data.image_url} alt={data.title} width="300" height="200" />
                 <div dangerouslySetInnerHTML={{ __html: data.description }} />
                 <a href={data.url} target="_blank" rel="noopener noreferrer" className="btn btn-link btn-sm">Read more</a>
               </div>
