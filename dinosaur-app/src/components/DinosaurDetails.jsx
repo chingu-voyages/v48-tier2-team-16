@@ -8,6 +8,7 @@ const DinosaurDetails = () => {
   const { id } = useParams();
   const dinosaur = dinosaurs.find(dino => dino.id === parseInt(id));
   const [news, setNews] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -18,6 +19,9 @@ const DinosaurDetails = () => {
         setNews(response.data.data.slice(0, 2));
       } catch (error) {
         console.error("Error fetching news:", error);
+        if (error.code === 'usage_limit_reached') {
+          setError("We have reached our daily API request limit. Please try again tomorrow.");
+        }
       }
     };
     fetchNews();
@@ -48,6 +52,8 @@ const DinosaurDetails = () => {
                 <a href={data.url} target="_blank" rel="noopener noreferrer" className="btn btn-link btn-sm">Read more</a>
               </div>
             ))
+          ) : error ? (
+            <p>{error}</p>
           ) : (
             <p>{"Sorry, we couldn't find any news articles about " + dinosaur.name + "."}</p>
           )}
