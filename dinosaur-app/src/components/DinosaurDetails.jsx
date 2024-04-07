@@ -44,7 +44,7 @@ const DinosaurDetails = () => {
                 <p>{new Date(data.published_at).toLocaleString('en-CA', { dateStyle: 'short', hour12: false, timeStyle: 'short' })}</p>
                 <p>Source: {data.source}</p>
                 <div dangerouslySetInnerHTML={{ __html: data.description }} />
-                <a href={data.url} className="btn btn-link btn-sm">Read more</a>
+                <a href={data.url} target="_blank" rel="noopener noreferrer" className="btn btn-link btn-sm">Read more</a>
               </div>
             ))
           ) : (
