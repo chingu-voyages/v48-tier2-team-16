@@ -2,11 +2,11 @@ import React from "react";
 
 export default function SearchForm({ handleChange, formData }) {
   return (
-    <div className="aside col-md-12 pb-4 pt-2" style={{ background: "#003f62" }}>
+    <div className="aside col-md-12 pb-4 pt-2" style={{ background: "#003f62"}}>
       <form className="container mt-4 text-white">
         <div className="row">
-          <div className="col-7">
-            <h4>Search Dinosaurs:</h4>
+          <div className="col-7" style={{ fontFamily: "Sigmar One, sans-serif"}}>
+            <h4>Find your favourite dinosaur!</h4>
           </div>
           <div className="col-5">
             <select
@@ -114,7 +114,7 @@ export default function SearchForm({ handleChange, formData }) {
 
         {/************************ WEIGHT SLIDERS ******************************/}
 
-        <label className="form-label" htmlFor="weight-max">
+        <label className="form-label" htmlFor="weight-max" style={{ fontFamily: "Ramla, sans-serif" }}>
           Choose a maximum weight: {formData.weightMax} kilograms
         </label>
 
@@ -130,7 +130,7 @@ export default function SearchForm({ handleChange, formData }) {
           onChange={handleChange}
         />
 
-        <label htmlFor="weight-min">
+        <label htmlFor="weight-min" style={{ fontFamily: "Ramla, sans-serif" }}>
           Choose a minimum weight: {formData.weightMin} kilograms
         </label>
 
@@ -148,7 +148,7 @@ export default function SearchForm({ handleChange, formData }) {
 
         {/************************ LENGTH SLIDERS ******************************/}
 
-        <label className="form-label" htmlFor="weight-max">
+        <label className="form-label" htmlFor="weight-max" style={{ fontFamily: "Ramla, sans-serif" }}>
           Choose a maximum length: {formData.lengthMax} meters
         </label>
 
@@ -164,7 +164,7 @@ export default function SearchForm({ handleChange, formData }) {
           onChange={handleChange}
         />
 
-        <label className="form-label" htmlFor="length-min">
+        <label className="form-label" htmlFor="length-min" style={{ fontFamily: "Ramla, sans-serif" }}>
           Choose a minimum length: {formData.lengthMin} meters
         </label>
 
