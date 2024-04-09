@@ -27,7 +27,7 @@ export default function SearchForm({ handleChange, formData }) {
           </div>
         </div>
 
-        <label htmlFor="dino-name">Dinosaur Name</label>
+        <label htmlFor="dino-name" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Name</label>
         <div className="input-group mb-3">
           <input
             className="form-control"
@@ -39,7 +39,7 @@ export default function SearchForm({ handleChange, formData }) {
             value={formData.dinoName}
           />
         </div>
-        <label htmlFor="country">Found In</label>
+        <label htmlFor="country" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Country</label>
 
         <div className="input-group mb-3">
           <input
@@ -94,7 +94,7 @@ export default function SearchForm({ handleChange, formData }) {
           <option value="Zimbabwe"></option>
         </datalist>
 
-        <label htmlFor="diet">Diet</label>
+        <label htmlFor="diet" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Diet</label>
         <div className="input-group mb-3">
           <input
             className="form-control"
