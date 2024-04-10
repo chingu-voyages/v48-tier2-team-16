@@ -55,14 +55,14 @@ const DinosaurList = ({ currentCards, filteredDinos, clearSearch }) => {
                   <div className="card-body">
                     <h4
                       className="card-title"
-                      style={{ textDecoration: "underline" }}
+                      style={{ textDecoration: "underline", fontFamily: "Sigmar One, sans-serif" }}
                     >
                       {dinosaur.name}
                     </h4>
                     {/* <p className="card-text">{dinosaur.description}</p> */}
                     <ul
                       className="list-group"
-                      style={{ border: "2px solid #b4eac8" }}
+                      style={{ border: "2px solid #b4eac8", fontFamily: "Ramla, sans-serif" }}
                     >
                       <li
                         className="list-group-item"

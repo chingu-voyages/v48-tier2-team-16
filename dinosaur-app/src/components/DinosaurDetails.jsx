@@ -53,9 +53,12 @@ const DinosaurDetails = ({ geocodes }) => {
             import.meta.env.VITE_THE_NEWS_API_KEY
           }`
         );
-        setNews(response.data.articles.slice(0, 2));
+        setNews(response.data.data.slice(0, 2));
       } catch (error) {
         console.error("Error fetching news:", error);
+        if (error.code === 'usage_limit_reached') {
+          setError("We have reached our daily API request limit. Please try again tomorrow.");
+        }
       }
     };
     fetchNews();
@@ -125,6 +128,8 @@ const DinosaurDetails = ({ geocodes }) => {
                 </a>
               </div>
             ))
+          ) : error ? (
+            <p>{error}</p>
           ) : (
             <p>
               {"Sorry, we couldn't find any news articles about " +
