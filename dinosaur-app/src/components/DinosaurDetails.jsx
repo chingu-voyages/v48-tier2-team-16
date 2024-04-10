@@ -49,7 +49,6 @@ const DinosaurDetails = ({ geocodes }) => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        console.log("error");
         const response = await axios.get(
           `https://api.thenewsapi.com/v1/news/all?api_token=${import.meta.env.VITE_THE_NEWS_API_KEY}&search=${dinosaur.name}&language=en`
         );
