@@ -8,16 +8,20 @@ const DinosaurDetails = () => {
   const { id } = useParams();
   const dinosaur = dinosaurs.find(dino => dino.id === parseInt(id));
   const [news, setNews] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=${dinosaur.name}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`
+          `https://api.thenewsapi.com/v1/news/all?api_token=${import.meta.env.VITE_THE_NEWS_API_KEY}&search=${dinosaur.name}&language=en`
         );
-        setNews(response.data.articles.slice(0, 2));
+        setNews(response.data.data.slice(0, 2));
       } catch (error) {
         console.error("Error fetching news:", error);
+        if (error.code === 'usage_limit_reached') {
+          setError("We have reached our daily API request limit. Please try again tomorrow.");
+        }
       }
     };
     fetchNews();
@@ -38,16 +42,18 @@ const DinosaurDetails = () => {
             <li className="list-group-item" style={{ backgroundColor: '#eafaea' }}>Found In: {dinosaur.foundIn}</li>
           </ul>
           {news.length > 0 ? (
-            news.map((article, index) => (
+            news.map((data, index) => (
               <div key={index} style={{ border: '1px solid #000' }}>
-                <h5>{article.title}</h5>
-                <p>{new Date(article.publishedAt).toLocaleString('en-CA', { dateStyle: 'short', hour12: false, timeStyle: 'short' })}</p>
-                <p>Source: {article.source.name}</p>
-                <p>Author: {article.author}</p>
-                <div dangerouslySetInnerHTML={{ __html: article.content }} />
-                <a href={article.url} className="btn btn-link btn-sm">Read more</a>
+                <h5>{data.title}</h5>
+                <p>{new Date(data.published_at).toLocaleString('en-CA', { dateStyle: 'short', hour12: false, timeStyle: 'short' })}</p>
+                <p>Source: {data.source}</p>
+                <img src={data.image_url} alt={data.title} width="300" height="200" />
+                <div dangerouslySetInnerHTML={{ __html: data.description }} />
+                <a href={data.url} target="_blank" rel="noopener noreferrer" className="btn btn-link btn-sm">Read more</a>
               </div>
             ))
+          ) : error ? (
+            <p>{error}</p>
           ) : (
             <p>{"Sorry, we couldn't find any news articles about " + dinosaur.name + "."}</p>
           )}
