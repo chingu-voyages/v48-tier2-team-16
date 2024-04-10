@@ -11,6 +11,7 @@ const DinosaurDetails = ({ geocodes }) => {
   const { id } = useParams();
   const dinosaur = dinosaurs.find((dino) => dino.id === parseInt(id));
   const [news, setNews] = useState([]);
+  const [error, setError] = useState(null);
   const dinoIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/5458/5458405.png",
     iconSize: [38, 38],
@@ -48,10 +49,9 @@ const DinosaurDetails = ({ geocodes }) => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
+        console.log("error");
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=${dinosaur.name}&apiKey=${
-            import.meta.env.VITE_THE_NEWS_API_KEY
-          }`
+          `https://api.thenewsapi.com/v1/news/all?api_token=${import.meta.env.VITE_THE_NEWS_API_KEY}&search=${dinosaur.name}&language=en`
         );
         setNews(response.data.data.slice(0, 2));
       } catch (error) {
