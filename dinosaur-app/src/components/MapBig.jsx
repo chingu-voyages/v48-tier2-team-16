@@ -9,7 +9,18 @@ export default function MapBig({ dinosaurs, geocodes, passBackCountry }) {
     iconSize: [38, 38],
   });
 
-  let dinoByCountry = geocodes;
+  const geocodesFixEngland = geocodes.map((country) => {
+    if (country.country === "England") {
+      return {
+        ...country,
+        lon: -1.2649062,
+        lat: 52.5310214,
+      };
+    }
+    return country;
+  });
+
+  let dinoByCountry = geocodesFixEngland;
   dinoByCountry.forEach((country) => (country.dinos = []));
   dinoByCountry.forEach((country) => {
     dinosaurs.forEach((dino) => {

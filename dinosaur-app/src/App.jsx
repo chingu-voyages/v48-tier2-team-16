@@ -10,7 +10,7 @@ import SearchForm from "./components/SearchForm";
 import Pagination from "./components/Pagination";
 
 import "./styles.css";
-import Header from './components/Header'
+import Header from "./components/Header";
 
 function App() {
   //state variables////////////////////////////////////
@@ -211,38 +211,41 @@ function App() {
 
   return (
     <div>
-    <Header />
-    <Router>
-      <DinosaurProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <SearchForm handleChange={handleChange} formData={formData} />
-                <MapBig
-                  dinosaurs={dinosaurs}
-                  geocodes={geocodes}
-                  handleChange={handleChange}
-                  passBackCountry={passBackCountry}
-                />
-                <DinosaurList
-                  currentCards={currentCards}
-                  filteredDinos={filteredDinos}
-                  clearSearch={clearSearch}
-                />
-                <Pagination
-                  cardsPerPage={cardsPerPage}
-                  totalCards={filteredDinos.length}
-                  paginate={paginate}
-                />
-              </>
-            }
-          />
-          <Route path="details/:id" element={<DinosaurDetails />} />
-        </Routes>
-      </DinosaurProvider>
-    </Router>
+      <Header />
+      <Router>
+        <DinosaurProvider>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <SearchForm handleChange={handleChange} formData={formData} />
+                  <MapBig
+                    dinosaurs={dinosaurs}
+                    geocodes={geocodes}
+                    handleChange={handleChange}
+                    passBackCountry={passBackCountry}
+                  />
+                  <DinosaurList
+                    currentCards={currentCards}
+                    filteredDinos={filteredDinos}
+                    clearSearch={clearSearch}
+                  />
+                  <Pagination
+                    cardsPerPage={cardsPerPage}
+                    totalCards={filteredDinos.length}
+                    paginate={paginate}
+                  />
+                </>
+              }
+            />
+            <Route
+              path="details/:id"
+              element={<DinosaurDetails geocodes={geocodes} />}
+            />
+          </Routes>
+        </DinosaurProvider>
+      </Router>
     </div>
   );
 }
