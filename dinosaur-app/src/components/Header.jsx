@@ -33,12 +33,12 @@ function Header() {
         <div className="container mt-3">
             <div className="row">
                 <div className="col-md-12">
-                    <h1 className="display col-md-2 mb-4" style={{ textTransform: "uppercase", fontFamily: "Sigmar One, sans-serif" }}>
+                    <h1 className="display col-md-3 mb-4" style={{ textTransform: "uppercase", fontFamily: "Sigmar One, sans-serif" }}>
                     Welcome to Dino World!</h1>
                     <p className="lead col-md-4 mb-4" style={{ fontFamily: "Rambla, sans-serif", fontWeight: "400" }}>Explore ancient wonders,uncover prehistoric secrets, and embark 
                     on a Jurassic journey. Let's dig into the past together!</p>
-                    <button className="btn btn-primary btn-large explore mb-5" style={{ background: "#bd423c", border: "none",
-                    textTransform: "uppercase", fontFamily: "Poppins, sans-serif", fontWeight: "600" }}>Start Exploring</button>
+                    <button className="btn btn-primary btn-large explore mb-5" style={{ background: "#bd423c", border: "none", textTransform: "uppercase", 
+                    fontFamily: "Poppins, sans-serif", fontWeight: "600" }}>Start Exploring</button>
                 </div>
             </div>
         </div>
