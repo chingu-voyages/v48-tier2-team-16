@@ -14,8 +14,7 @@ import { Chart } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import "./styles.css";
 import Header from "./components/Header";
-
-Chart.register(ChartDataLabels);
+import { FaAlignRight } from "react-icons/fa";
 
 function App() {
   //state variables////////////////////////////////////
@@ -34,8 +33,6 @@ function App() {
     lengthMax: 40,
     sortBy: "",
   });
-
-  ChartJS.register(ArcElement, Tooltip, Legend);
 
   // api calls in useEffect/////////////////////////////////
 
@@ -209,6 +206,8 @@ function App() {
     default:
   }
   //chart data////////////////////////////////////////////////////////////
+  Chart.register(ChartDataLabels);
+  ChartJS.register(ArcElement, Tooltip, Legend);
 
   let carnivoreCount = 0;
   let herbivoreCount = 0;
@@ -246,20 +245,22 @@ function App() {
   };
 
   const options = {
-    pieceLabel: {
-      render: "value",
-    },
     plugins: {
       datalabels: {
-        anchor: "end",
+        anchor: "right",
         align: "end",
         formatter: (value, ctx) => {
-          console.log(ctx);
           const totalSum = ctx.dataset.data.reduce((acc, curr) => {
             return acc + curr;
           }, 0);
-          console.log(totalSum);
-          return value / totalSum;
+          return value > 0 ? ((value / totalSum) * 100).toFixed(1) + "%" : "";
+        },
+      },
+      legend: {
+        position: "right",
+        title: {
+          display: true,
+          text: "Dinosaurs by Diet",
         },
       },
     },
