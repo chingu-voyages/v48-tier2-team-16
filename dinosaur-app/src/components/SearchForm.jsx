@@ -27,6 +27,7 @@ export default function SearchForm({ handleChange, formData }) {
           </div>
         </div>
 
+        <div className="dino-fields col-md-12 mt-3 d-flex gap-2" style={{ display: "inline-flex"}}>
         <label htmlFor="dino-name" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Name</label>
         <div className="input-group mb-3">
           <input
@@ -111,11 +112,13 @@ export default function SearchForm({ handleChange, formData }) {
           <option value="herbivorous"></option>
           <option value="carnivorous"></option>
         </datalist>
+        </div>
 
         {/************************ WEIGHT SLIDERS ******************************/}
 
+        <div className="dino-weight col-md-12 d-flex gap-2" style={{ display: "inline-flex" }}>
         <label className="form-label" htmlFor="weight-max" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a maximum weight: {formData.weightMax} kilograms
+          Max Weight: {formData.weightMax} kilograms
         </label>
 
         <input
@@ -131,7 +134,7 @@ export default function SearchForm({ handleChange, formData }) {
         />
 
         <label htmlFor="weight-min" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a minimum weight: {formData.weightMin} kilograms
+          Min Weight: {formData.weightMin} kilograms
         </label>
 
         <input
@@ -145,11 +148,13 @@ export default function SearchForm({ handleChange, formData }) {
           value={formData.weightMin}
           onChange={handleChange}
         />
+        </div>
 
         {/************************ LENGTH SLIDERS ******************************/}
 
+        <div className="dino-height col-md-12 d-flex gap-2" style={{ display: "inline-flex" }}>
         <label className="form-label" htmlFor="weight-max" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a maximum length: {formData.lengthMax} meters
+          Max Length: {formData.lengthMax} meters
         </label>
 
         <input
@@ -165,7 +170,7 @@ export default function SearchForm({ handleChange, formData }) {
         />
 
         <label className="form-label" htmlFor="length-min" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a minimum length: {formData.lengthMin} meters
+          Min Length: {formData.lengthMin} meters
         </label>
 
         <input
@@ -179,6 +184,7 @@ export default function SearchForm({ handleChange, formData }) {
           value={formData.lengthMin}
           onChange={handleChange}
         />
+        </div>
       </form>
     </div>
   );
