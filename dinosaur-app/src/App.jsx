@@ -8,9 +8,13 @@ import DinosaurDetails from "./components/DinosaurDetails";
 import MapBig from "./components/MapBig";
 import SearchForm from "./components/SearchForm";
 import Pagination from "./components/Pagination";
-
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { Chart } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import "./styles.css";
 import Header from "./components/Header";
+import { FaAlignRight } from "react-icons/fa";
 
 function App() {
   //state variables////////////////////////////////////
@@ -95,7 +99,7 @@ function App() {
   };
 
   const handleChange = (e) => {
-    e.preventDefault();
+    e.preventDefault?.();
     const changedField = e.target.name;
     const newValue = e.target.value;
     setFormData((currForm) => {
@@ -201,6 +205,63 @@ function App() {
       break;
     default:
   }
+  //chart data////////////////////////////////////////////////////////////
+  Chart.register(ChartDataLabels);
+  ChartJS.register(ArcElement, Tooltip, Legend);
+
+  let carnivoreCount = 0;
+  let herbivoreCount = 0;
+  let omnivoreCount = 0;
+  filteredDinos.forEach((dino) => {
+    if (dino.diet === "carnivorous") {
+      carnivoreCount += 1;
+    }
+    if (dino.diet === "herbivorous") {
+      herbivoreCount += 1;
+    }
+    if (dino.diet === "omnivorous") {
+      omnivoreCount += 1;
+    }
+  });
+  const dietData = {
+    labels: ["Carnivorous", "Herbivorous", "Omnivorous"],
+    datasets: [
+      {
+        label: "Dinosaur Diet",
+        data: [carnivoreCount, herbivoreCount, omnivoreCount],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+  const options = {
+    plugins: {
+      datalabels: {
+        anchor: "right",
+        align: "end",
+        formatter: (value, ctx) => {
+          const totalSum = ctx.dataset.data.reduce((acc, curr) => {
+            return acc + curr;
+          }, 0);
+          return value > 0 ? ((value / totalSum) * 100).toFixed(1) + "%" : "";
+        },
+      },
+      legend: {
+        position: "right",
+      },
+    },
+  };
+
+  //pagination variables///////////////////////////////////////////////////
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = filteredDinos.slice(indexOfFirstCard, indexOfLastCard);
@@ -220,12 +281,25 @@ function App() {
               element={
                 <>
                   <SearchForm handleChange={handleChange} formData={formData} />
-                  <MapBig
-                    dinosaurs={dinosaurs}
-                    geocodes={geocodes}
-                    handleChange={handleChange}
-                    passBackCountry={passBackCountry}
-                  />
+                  <div className="container col-md-12 mb-4 ">
+                    <div className="container row">
+                      <div className="container col-md-8">
+                        <MapBig
+                          dinosaurs={dinosaurs}
+                          geocodes={geocodes}
+                          handleChange={handleChange}
+                          passBackCountry={passBackCountry}
+                        />
+                      </div>
+                      <div className="col-md-4">
+                        <p className="h5 mt-5 text-center mb-0">
+                          {" "}
+                          Dinosaurs by Diet
+                        </p>
+                        <Pie data={dietData} options={options} />
+                      </div>
+                    </div>
+                  </div>
                   <DinosaurList
                     currentCards={currentCards}
                     filteredDinos={filteredDinos}

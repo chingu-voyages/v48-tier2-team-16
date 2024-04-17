@@ -1,11 +1,18 @@
 import React from "react";
+import MultiRangeSlider from "multi-range-slider-react";
 
 export default function SearchForm({ handleChange, formData }) {
   return (
-    <div className="aside col-md-12 pb-4 pt-2" style={{ background: "#003f62"}}>
+    <div
+      className="aside col-md-12 pb-4 pt-2"
+      style={{ background: "#003f62" }}
+    >
       <form className="container mt-4 text-white">
         <div className="row">
-          <div className="col-7" style={{ fontFamily: "Sigmar One, sans-serif"}}>
+          <div
+            className="col-7"
+            style={{ fontFamily: "Sigmar One, sans-serif" }}
+          >
             <h4>Find your favourite dinosaur!</h4>
           </div>
           <div className="col-5">
@@ -27,7 +34,12 @@ export default function SearchForm({ handleChange, formData }) {
           </div>
         </div>
 
-        <label htmlFor="dino-name" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Name</label>
+        <label
+          htmlFor="dino-name"
+          style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}
+        >
+          Name
+        </label>
         <div className="input-group mb-3">
           <input
             className="form-control"
@@ -39,7 +51,12 @@ export default function SearchForm({ handleChange, formData }) {
             value={formData.dinoName}
           />
         </div>
-        <label htmlFor="country" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Country</label>
+        <label
+          htmlFor="country"
+          style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}
+        >
+          Country
+        </label>
 
         <div className="input-group mb-3">
           <input
@@ -94,7 +111,12 @@ export default function SearchForm({ handleChange, formData }) {
           <option value="Zimbabwe"></option>
         </datalist>
 
-        <label htmlFor="diet" style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}>Diet</label>
+        <label
+          htmlFor="diet"
+          style={{ fontFamily: "Ramla, sans-serif", fontWeight: "400" }}
+        >
+          Diet
+        </label>
         <div className="input-group mb-3">
           <input
             className="form-control"
@@ -114,70 +136,89 @@ export default function SearchForm({ handleChange, formData }) {
 
         {/************************ WEIGHT SLIDERS ******************************/}
 
-        <label className="form-label" htmlFor="weight-max" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a maximum weight: {formData.weightMax} kilograms
-        </label>
+        <div className="d-flex justify-content-between">
+          <label
+            className="form-label"
+            style={{ fontFamily: "Ramla, sans-serif" }}
+          >
+            Minimum weight: {formData.weightMin} kilograms
+          </label>
 
-        <input
-          className="form-range"
-          type="range"
-          name="weightMax"
-          id="weight-max"
-          min="0"
-          max="70000"
-          step="500"
-          value={formData.weightMax}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="weight-min" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a minimum weight: {formData.weightMin} kilograms
-        </label>
-
-        <input
-          className="form-range"
-          type="range"
+          <label
+            className="form-label"
+            style={{ fontFamily: "Ramla, sans-serif" }}
+          >
+            Maximum weight: {formData.weightMax} kilograms
+          </label>
+        </div>
+        <MultiRangeSlider
+          style={{ border: "none", boxShadow: "none", padding: "15px 10px" }}
+          label="true"
+          ruler="false"
           name="weightMin"
-          id="weight-min"
+          canMinMaxValueSame={true}
           min="0"
           max="70000"
           step="500"
-          value={formData.weightMin}
-          onChange={handleChange}
+          minValue={formData.weightMin}
+          maxValue={formData.weightMax}
+          onChange={(e) => {
+            let name = "weightMin";
+            let value = e.minValue;
+            if (formData.weightMax != e.maxValue) {
+              name = "weightMax";
+              value = e.maxValue;
+            }
+            handleChange({
+              target: {
+                name,
+                value,
+              },
+            });
+          }}
         />
-
+        <br />
         {/************************ LENGTH SLIDERS ******************************/}
+        <div className="d-flex justify-content-between">
+          <label
+            className="form-label"
+            style={{ fontFamily: "Ramla, sans-serif" }}
+          >
+            Minimum length: {formData.lengthMin} meters
+          </label>
 
-        <label className="form-label" htmlFor="weight-max" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a maximum length: {formData.lengthMax} meters
-        </label>
-
-        <input
-          className="form-range"
-          type="range"
-          name="lengthMax"
-          id="length-max"
-          min="0"
-          max="40"
-          step="1"
-          value={formData.lengthMax}
-          onChange={handleChange}
-        />
-
-        <label className="form-label" htmlFor="length-min" style={{ fontFamily: "Ramla, sans-serif" }}>
-          Choose a minimum length: {formData.lengthMin} meters
-        </label>
-
-        <input
-          className="form-range"
-          type="range"
+          <label
+            className="form-label"
+            style={{ fontFamily: "Ramla, sans-serif" }}
+          >
+            Maximum length: {formData.lengthMax} meters
+          </label>
+        </div>
+        <MultiRangeSlider
+          style={{ border: "none", boxShadow: "none", padding: "15px 10px" }}
+          label="true"
+          ruler="false"
           name="lengthMin"
-          id="length-min"
+          canMinMaxValueSame={true}
           min="0"
           max="40"
           step="1"
-          value={formData.lengthMin}
-          onChange={handleChange}
+          minValue={formData.lengthMin}
+          maxValue={formData.lengthMax}
+          onChange={(e) => {
+            let name = "lengthMin";
+            let value = e.minValue;
+            if (formData.lengthMax != e.maxValue) {
+              name = "lengthMax";
+              value = e.maxValue;
+            }
+            handleChange({
+              target: {
+                name,
+                value,
+              },
+            });
+          }}
         />
       </form>
     </div>
