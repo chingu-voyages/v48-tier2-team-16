@@ -99,7 +99,7 @@ function App() {
   };
 
   const handleChange = (e) => {
-    e.preventDefault();
+    e.preventDefault?.();
     const changedField = e.target.name;
     const newValue = e.target.value;
     setFormData((currForm) => {
@@ -243,7 +243,6 @@ function App() {
       },
     ],
   };
-
   const options = {
     plugins: {
       datalabels: {
@@ -258,10 +257,6 @@ function App() {
       },
       legend: {
         position: "right",
-        title: {
-          display: true,
-          text: "Dinosaurs by Diet",
-        },
       },
     },
   };
@@ -286,17 +281,23 @@ function App() {
               element={
                 <>
                   <SearchForm handleChange={handleChange} formData={formData} />
-                  <div className="container row">
-                    <div className="container col-md-8">
-                      <MapBig
-                        dinosaurs={dinosaurs}
-                        geocodes={geocodes}
-                        handleChange={handleChange}
-                        passBackCountry={passBackCountry}
-                      />
-                    </div>
-                    <div className="col-md-4 mb-4">
-                      <Pie data={dietData} options={options} />
+                  <div className="container col-md-12 mb-4 ">
+                    <div className="container row">
+                      <div className="container col-md-8">
+                        <MapBig
+                          dinosaurs={dinosaurs}
+                          geocodes={geocodes}
+                          handleChange={handleChange}
+                          passBackCountry={passBackCountry}
+                        />
+                      </div>
+                      <div className="col-md-4">
+                        <p className="h5 mt-5 text-center mb-0">
+                          {" "}
+                          Dinosaurs by Diet
+                        </p>
+                        <Pie data={dietData} options={options} />
+                      </div>
                     </div>
                   </div>
                   <DinosaurList
