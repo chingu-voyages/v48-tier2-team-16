@@ -13,7 +13,7 @@ export default function SearchForm({ handleChange, formData }) {
             className="col-7"
             style={{ fontFamily: "Sigmar One, sans-serif" }}
           >
-            <h4>Find your favourite dinosaur!</h4>
+            <h4 id="begin-search">Find your favourite dinosaur!</h4>
           </div>
           <div className="col-5">
             <select

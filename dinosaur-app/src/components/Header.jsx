@@ -16,10 +16,10 @@ function Header() {
     >
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-1">
+          <div className="col-2  ">
             <img src={logo} alt="Dinosaur app logo" className="img-fluid" />
           </div>
-          <div className="col-md-9 d-flex justify-content-end">
+          <div className="col-10 d-flex justify-content-end">
             <nav className="navbar navbar-expand">
               <ul
                 className="navbar"
@@ -65,18 +65,20 @@ function Header() {
               Explore ancient wonders,uncover prehistoric secrets, and embark on
               a Jurassic journey. Let's dig into the past together!
             </p>
-            <button
-              className="btn btn-primary btn-large explore mb-5"
-              style={{
-                background: "#bd423c",
-                border: "none",
-                textTransform: "uppercase",
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "600",
-              }}
-            >
-              Start Exploring
-            </button>
+            <a href="#begin-search">
+              <button
+                className="btn btn-primary btn-large explore mb-5"
+                style={{
+                  background: "#bd423c",
+                  border: "none",
+                  textTransform: "uppercase",
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "600",
+                }}
+              >
+                Start Exploring
+              </button>
+            </a>
           </div>
         </div>
       </div>
