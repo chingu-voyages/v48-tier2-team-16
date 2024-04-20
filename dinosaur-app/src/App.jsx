@@ -14,6 +14,7 @@ import { Chart } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import "./styles.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { FaAlignRight } from "react-icons/fa";
 
 function App() {
@@ -320,6 +321,7 @@ function App() {
           </Routes>
         </DinosaurProvider>
       </Router>
+      <Footer />
     </div>
   );
 }
