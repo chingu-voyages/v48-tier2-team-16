@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import dinoData from "./dinoData"; //this replaces slow chingu API
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DinosaurProvider } from "./context/DinosaurContext";
 import DinosaurList from "./components/DinosaurList";
@@ -19,7 +20,7 @@ import { FaAlignRight } from "react-icons/fa";
 
 function App() {
   //state variables////////////////////////////////////
-  const [dinosaurs, setDinosaurs] = useState([]);
+  const [dinosaurs, setDinosaurs] = useState(dinoData);
   const [geocodes, setGeocodes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,20 +37,22 @@ function App() {
   });
 
   // api calls in useEffect/////////////////////////////////
+  // api call commented out due to slow chingu api ////////
+  // instead, dinoData is imported from dinoData.js ///////
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://chinguapi.onrender.com/dinosaurs"
-        );
-        setDinosaurs(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://chinguapi.onrender.com/dinosaurs"
+  //       );
+  //       setDinosaurs(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchGeocodes = async () => {
@@ -87,7 +90,7 @@ function App() {
     }; //end fetchGeocodes
     if (dinosaurs.length === 0) return;
     fetchGeocodes();
-  }, [dinosaurs]);
+  }, []);
 
   //functions////////////////////////////////////////////////
   const passBackCountry = (e) => {
