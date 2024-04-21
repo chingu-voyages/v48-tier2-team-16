@@ -9,7 +9,7 @@ const DinosaurList = ({ currentCards, filteredDinos, clearSearch }) => {
   const { dinosaurs } = useDinosaurContext();
 
   return (
-    <div className="main col-md-12 pt-2" style={{ background: "#8a7356"}}>
+    <div className="main col-md-12 pt-2" style={{ background: "#8a7356" }}>
       {/******** SEARCH SUMMARY & SORTING **************/}
 
       <div className="container mt-4">
@@ -23,9 +23,11 @@ const DinosaurList = ({ currentCards, filteredDinos, clearSearch }) => {
             </p>
           </div>
           <div className="col-md-3">
-            <button className="btn btn-secondary" onClick={clearSearch}>
-              Clear search
-            </button>
+            <a href="#begin-search">
+              <button className="btn btn-secondary" onClick={clearSearch}>
+                Clear search
+              </button>
+            </a>
           </div>
         </div>
         <hr />
@@ -55,14 +57,20 @@ const DinosaurList = ({ currentCards, filteredDinos, clearSearch }) => {
                   <div className="card-body">
                     <h4
                       className="card-title"
-                      style={{ textDecoration: "underline", fontFamily: "Sigmar One, sans-serif" }}
+                      style={{
+                        textDecoration: "underline",
+                        fontFamily: "Sigmar One, sans-serif",
+                      }}
                     >
                       {dinosaur.name}
                     </h4>
                     {/* <p className="card-text">{dinosaur.description}</p> */}
                     <ul
                       className="list-group"
-                      style={{ border: "2px solid #b4eac8", fontFamily: "Ramla, sans-serif" }}
+                      style={{
+                        border: "2px solid #b4eac8",
+                        fontFamily: "Ramla, sans-serif",
+                      }}
                     >
                       <li
                         className="list-group-item"
